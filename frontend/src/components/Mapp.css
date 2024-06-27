@@ -1,0 +1,15 @@
+.leaflet-container {
+  height: 90vh;
+  width: 100%;
+  border-radius: 2rem;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+}
+.leaflet-popup-content {
+  font-size: 40px; /* Adjust this value to your desired font size */
+}
