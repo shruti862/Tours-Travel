@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { PostContext } from "../App";
 import { useState, useContext, useEffect } from "react";
+import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 function Navbar() {
   const navigate = useNavigate();
@@ -43,10 +44,11 @@ function Navbar() {
       if (res.data.status == "success") {
         Cookies.set("isLoggedIn", "false");
         setIsLoggedIn(false);
+        toast.success("Logged out successfully!");
         navigate("/");
 
         // Refresh the page
-        window.location.reload();
+        // window.location.reload();
       }
     } catch (err) {
       console.log(err.response);

@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,13 +26,20 @@ function Login() {
       });
 
       if (response.data.status === "success") {
-        console.log("Logged in successfully!");
+        toast.success("Logged in successfully!");
 
         Cookies.set("isLoggedIn", "true");
         navigate("/");
+      } else {
+        toast.error(response.data.message); // Display error message from API
       }
-    } catch (err) {
-      console.log(err.message);
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        toast.error("Incorrect email or password. Please try again.");
+      } else {
+        console.error("Error during login:", error);
+        toast.error("Login failed. Please try again.");
+      }
     }
   };
   return (

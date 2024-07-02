@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import styles from "./SignUp.module.css";
 import { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
@@ -29,12 +30,19 @@ function SignUp() {
       });
 
       if (response.data.status === "success") {
-        console.log("Signed up  successfully!");
+        toast.success("Signed up  successfully!. Now Log in your account.   ");
 
         navigate("/login");
       }
     } catch (err) {
-      console.log(err.message);
+      if (err.response && err.response.data && err.response.data.message) {
+        // Specific error message from backend
+        toast.error(err.response.data.message + "  Please login your account ");
+        navigate("/login");
+      } else {
+        // General error message
+        toast.error(err.message);
+      }
     }
   };
   return (

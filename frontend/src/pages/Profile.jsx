@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { PostContext } from "../App";
 import { useState, useContext, useEffect } from "react";
+import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 
 const NavItem = ({ link, text, icon, active }) => (
@@ -18,7 +19,6 @@ const NavItem = ({ link, text, icon, active }) => (
   </li>
 );
 
-// eslint-disable-next-line no-unused-vars
 function Profile() {
   const { isLoggedIn, setIsLoggedIn } = useContext(PostContext);
   const [email, setEmail] = useState("");
@@ -76,13 +76,17 @@ function Profile() {
         data: formData,
       });
       if (response.status === 200) {
-        window.location.reload();
+        toast.success("Updated successfully!");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       }
     } catch (err) {
       console.log(err);
     }
   };
-  const handlePasswordUpdate = async () => {
+  const handlePasswordUpdate = async (e) => {
+    e.preventDefault();
     try {
       const response = await axios({
         method: "PATCH",
@@ -94,9 +98,22 @@ function Profile() {
           passwordConfirm: confirmPassword,
         },
       });
-      console.log(response);
-    } catch (err) {
-      console.log(err);
+      console.log(response.data);
+      if (response.status === 200) {
+        toast.success(" Password Updated successfully!");
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        toast.error(error.response.data.message);
+      } else {
+        console.error("Error updating password:", error);
+        toast.error("Password update failed. Please try again.");
+      }
     }
   };
 
