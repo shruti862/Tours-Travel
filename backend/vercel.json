@@ -8,24 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/api/v1/tours(.*)",
-      "dest": "/"
-    },
-    {
-      "src": "/api/v1/bookings(.*)",
-      "dest": "/"
-    },
-    {
-      "src": "/api/v1/users(.*)",
-      "dest": "/"
-    },
-    {
-      "src": "/api/v1/reviews(.*)",
-      "dest": "/"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/app.js"
     }
   ]
 }
