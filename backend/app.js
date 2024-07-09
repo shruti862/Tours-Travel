@@ -23,7 +23,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://tours-travel-frontendd.vercel.app',
+    origin: 'https://tours-travel-frontendd.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
   })
