@@ -18,7 +18,6 @@ const createSendToken = (user, statusCode, res) => {
     expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    domain: 'localhost',
     credentials: 'include'
   };
 
@@ -79,7 +78,6 @@ exports.logout = (req, res) => {
     expires: new Date(Date.now() + 10 * 1000),
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    domain: 'localhost',
     credentials: 'include'
   });
   res.status(200).json({ status: 'success' });
