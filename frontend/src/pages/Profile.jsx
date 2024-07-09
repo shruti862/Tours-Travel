@@ -40,7 +40,7 @@ function Profile() {
       try {
         const response = await axios({
           method: "GET",
-          url: "https://tours-travel-tawny.vercel.app/api/v1/users/me",
+          url: "https://tours-travel-5ebw.vercel.app/api/v1/users/me",
           withCredentials: true,
         });
 
@@ -70,7 +70,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "PATCH",
-        url: "https://tours-travel-tawny.vercel.app/api/v1/users/updateMe",
+        url: "https://tours-travel-5ebw.vercel.app/api/v1/users/updateMe",
         withCredentials: true,
         data: formData,
       });
@@ -89,7 +89,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "PATCH",
-        url: "https://tours-travel-tawny.vercel.app/api/v1/users/updateMyPassword",
+        url: "https://tours-travel-5ebw.vercel.app/api/v1/users/updateMyPassword",
         withCredentials: true,
         data: {
           passwordCurrent: password,
@@ -187,7 +187,7 @@ function Profile() {
                     <img
                       className={styles["form__user-photo"]}
                       src={
-                        `https://tours-travel-tawny.vercel.app/img/users/` +
+                        `https://tours-travel-5ebw.vercel.app/img/users/` +
                         user.photo
                       }
                       alt="User photo"
