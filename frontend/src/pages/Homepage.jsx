@@ -12,7 +12,7 @@ function Homepage() {
       try {
         const response = await axios({
           method: "GET",
-          url: "https://tours-travel-api.vercel.app/",
+          url: "https://tours-travel-api.vercel.app/api/v1/tours",
         });
 
         setTours(response.data.data.data);
