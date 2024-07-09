@@ -14,7 +14,7 @@ function Homepage() {
           method: "GET",
           url: "http://localhost:3000/",
         });
-        console.log(response.data.data.data);
+
         setTours(response.data.data.data);
       } catch (error) {
         console.log(error);

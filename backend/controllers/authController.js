@@ -87,8 +87,7 @@ exports.logout = (req, res) => {
 
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) Getting token and check of it's there
-  console.log('Request Headers:', req.headers); // Log headers to debug
-  console.log('Cookies:', req.cookies);
+
   let token;
   if (
     req.headers.authorization &&

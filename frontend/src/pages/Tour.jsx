@@ -25,7 +25,6 @@ function Tour() {
         });
 
         setTourData(response.data.data.tour);
-        console.log(response.data.data.tour);
       } catch (error) {
         console.error("Error fetching tour data:", error);
       }

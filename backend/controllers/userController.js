@@ -59,7 +59,6 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.updateMe = catchAsync(async (req, res, next) => {
-  console.log('Request Body:', req.body);
   // 1) Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
     return next(
@@ -74,7 +73,6 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   const filteredBody = filterObj(req.body, 'name', 'email');
 
   if (req.file) {
-    console.log('File:', req.file);
     filteredBody.photo = req.file.filename;
   }
 

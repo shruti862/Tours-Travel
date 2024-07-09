@@ -57,7 +57,6 @@ function Profile() {
   }, [isLoggedIn]);
 
   const handlePhotoChange = (event) => {
-    console.log(event.target.files[0]);
     setPhoto(event.target.files[0]);
   };
 
@@ -98,7 +97,7 @@ function Profile() {
           passwordConfirm: confirmPassword,
         },
       });
-      console.log(response.data);
+
       if (response.status === 200) {
         toast.success(" Password Updated successfully!");
         setTimeout(() => {
