@@ -23,7 +23,7 @@ function Navbar() {
       try {
         const response = await axios({
           method: "GET",
-          url: "https://tours-travel-backend-one.vercel.app/api/v1/users/me",
+          url: "https://tours-travel-tawny.vercel.app/api/v1/users/me",
           withCredentials: true,
         });
 
@@ -39,7 +39,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       const res = await axios.get(
-        "https://tours-travel-backend-one.vercel.app/api/v1/users/logout",
+        "https://tours-travel-tawny.vercel.app/api/v1/users/logout",
         {
           withCredentials: true,
         }
@@ -80,7 +80,7 @@ function Navbar() {
             <Link to={"/me"} className={styles.nav__el}>
               <img
                 src={
-                  `https://tours-travel-backend-one.vercel.app/img/users/` +
+                  `https://tours-travel-tawny.vercel.app/img/users/` +
                   user.photo
                 }
                 alt="User photo"
