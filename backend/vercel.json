@@ -8,8 +8,40 @@
   ],
   "routes": [
     {
+      "src": "/api/v1/tours(.*)",
+      "dest": "/api/v1/tours"
+    },
+    {
+      "src": "/api/v1/bookings(.*)",
+      "dest": "/api/v1/bookings"
+    },
+    {
+      "src": "/api/v1/users(.*)",
+      "dest": "/api/v1/users"
+    },
+    {
+      "src": "/api/v1/reviews(.*)",
+      "dest": "/api/v1/reviews"
+    },
+    {
       "src": "/(.*)",
       "dest": "/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://tours-travel-frontendd.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,HEAD,PUT,PATCH,POST,DELETE"
+        },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
     }
   ]
 }
