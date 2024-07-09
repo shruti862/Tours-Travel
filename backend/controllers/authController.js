@@ -12,11 +12,11 @@ const signToken = id => {
   });
 };
 
-const createSendToken = (user, statusCode, req, res) => {
+const createSendToken = (user, statusCode, res) => {
   const token = signToken(user._id);
   const cookieOptions = {
     expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-    secure: req.secure,
+    secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     credentials: 'include'
   };
