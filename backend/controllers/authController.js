@@ -18,7 +18,7 @@ const createSendToken = (user, statusCode, res) => {
     expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    sameSite: 'none',
+    samesite: 'none',
     credentials: 'include'
   };
 
