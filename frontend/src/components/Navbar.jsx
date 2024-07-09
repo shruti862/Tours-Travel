@@ -79,7 +79,9 @@ function Navbar() {
 
             <Link to={"/me"} className={styles.nav__el}>
               <img
-                src={`http://localhost:3000/img/users/` + user.photo}
+                src={
+                  `https://tours-travel-api.vercel.app/img/users/` + user.photo
+                }
                 alt="User photo"
                 className={styles.nav__user_img}
               />

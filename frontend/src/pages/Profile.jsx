@@ -40,7 +40,7 @@ function Profile() {
       try {
         const response = await axios({
           method: "GET",
-          url: "http://localhost:3000/api/v1/users/me",
+          url: "https://tours-travel-api.vercel.app/api/v1/users/me",
           withCredentials: true,
         });
 
@@ -70,7 +70,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "PATCH",
-        url: "http://localhost:3000/api/v1/users/updateMe",
+        url: "https://tours-travel-api.vercel.app/api/v1/users/updateMe",
         withCredentials: true,
         data: formData,
       });
@@ -186,7 +186,10 @@ function Profile() {
                   <div className={styles["form__photo-upload"]}>
                     <img
                       className={styles["form__user-photo"]}
-                      src={`http://localhost:3000/img/users/` + user.photo}
+                      src={
+                        `https://tours-travel-api.vercel.app/img/users/` +
+                        user.photo
+                      }
                       alt="User photo"
                     />
                     <input

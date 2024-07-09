@@ -41,7 +41,7 @@ function Tour() {
         data: { session },
       } = await axios({
         method: "GET",
-        url: `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`,
+        url: `https://tours-travel-api.vercel.app/api/v1/bookings/checkout-session/${tourId}`,
         withCredentials: true,
       });
 
@@ -71,7 +71,7 @@ function Tour() {
           <div className={styles.header__hero_overlay}></div>
           <img
             className={styles.header__hero_img}
-            src={`http://localhost:3000/img/tours/${tourData.imageCover}`}
+            src={`https://tours-travel-api.vercel.app/img/tours/${tourData.imageCover}`}
             alt={`${tourData.name}`}
           />
         </div>
@@ -153,7 +153,7 @@ function Tour() {
               {tourData.guides?.map((guide, idx) => (
                 <div className={styles.overviewBoxDetail} key={idx}>
                   <img
-                    src={`http://localhost:3000/img/users/${guide.photo}`}
+                    src={`https://tours-travel-api.vercel.app/img/users/${guide.photo}`}
                     alt={`${guide.name}`}
                     className={styles.overviewBoxImg}
                   />
@@ -180,7 +180,7 @@ function Tour() {
         {tourData.images?.map((image, idx) => (
           <div className={styles.pictureBox} key={idx}>
             <img
-              src={`http://localhost:3000/img/tours/${image}`}
+              src={`https://tours-travel-api.vercel.app/img/tours/${image}`}
               alt={`The Park Camper Tour ${idx + 1}`}
               className={`${styles.pictureBoxImg} ${
                 styles[`pictureBoxImg${idx + 1}`]

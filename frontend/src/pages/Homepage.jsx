@@ -39,7 +39,7 @@ function Homepage() {
                   <div className={styles.card__picture_overlay}>&nbsp;</div>
 
                   <img
-                    src={`http://localhost:3000/img/tours/${tour.imageCover}`}
+                    src={`https://tours-travel-api.vercel.app/img/tours/${tour.imageCover}`}
                     alt={tour.name}
                     className={styles.card__picture_img}
                   />
