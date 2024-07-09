@@ -23,7 +23,7 @@ function Navbar() {
       try {
         const response = await axios({
           method: "GET",
-          url: "http://localhost:3000/api/v1/users/me",
+          url: "https://tours-travel-api.vercel.app/api/v1/users/me",
           withCredentials: true,
         });
 
@@ -38,9 +38,12 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/users/logout", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://tours-travel-api.vercel.app/api/v1/users/logout",
+        {
+          withCredentials: true,
+        }
+      );
       if (res.data.status == "success") {
         Cookies.set("isLoggedIn", "false");
         setIsLoggedIn(false);

@@ -89,7 +89,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "PATCH",
-        url: "http://localhost:3000/api/v1/users/updateMyPassword",
+        url: "https://tours-travel-api.vercel.app/api/v1/users/updateMyPassword",
         withCredentials: true,
         data: {
           passwordCurrent: password,

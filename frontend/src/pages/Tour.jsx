@@ -21,7 +21,7 @@ function Tour() {
       try {
         const response = await axios({
           method: "GET",
-          url: `http://localhost:3000/tour/${slug}`,
+          url: `https://tours-travel-api.vercel.app/tour/${slug}`,
         });
 
         setTourData(response.data.data.tour);
