@@ -12,7 +12,7 @@ function Homepage() {
       try {
         const response = await axios({
           method: "GET",
-          url: "https://tours-travel-api.vercel.app/api/v1/tours",
+          url: "https://tours-travel-backend-one.vercel.app/api/v1/tours",
         });
 
         setTours(response.data.data.data);
@@ -39,7 +39,7 @@ function Homepage() {
                   <div className={styles.card__picture_overlay}>&nbsp;</div>
 
                   <img
-                    src={`https://tours-travel-api.vercel.app/img/tours/${tour.imageCover}`}
+                    src={`https://tours-travel-backend-one.vercel.app/img/tours/${tour.imageCover}`}
                     alt={tour.name}
                     className={styles.card__picture_img}
                   />

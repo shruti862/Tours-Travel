@@ -5,7 +5,7 @@ function ReviewCard({ Review }) {
     <div className={styles.reviews__card} key={idx}>
       <div className={styles.reviews__avatar}>
         <img
-          src={`https://tours-travel-api.vercel.app/img/users/${review.user.photo}`}
+          src={`https://tours-travel-backend-one.vercel.app/img/users/${review.user.photo}`}
           alt="Ben Hadley"
           className={styles.reviews__avatar_img}
         />
