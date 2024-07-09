@@ -20,7 +20,7 @@ const bookingRouter = require('./routes/bookingRoutes');
 const app = express();
 
 // 1) GLOBAL MIDDLEWARES
-// Serving static files
+
 app.use(
   cors({
     origin: 'https://tours-travel-frontendd.vercel.app',
@@ -28,6 +28,10 @@ app.use(
     credentials: true
   })
 );
+
+// Handling preflight requests
+app.options('*', cors());
+// Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 // Set security HTTP headers
