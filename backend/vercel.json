@@ -27,21 +27,5 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://tours-travel-frontendd.vercel.app"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,HEAD,PUT,PATCH,POST,DELETE"
-        },
-        { "key": "Access-Control-Allow-Credentials", "value": "true" }
-      ]
-    }
   ]
 }
