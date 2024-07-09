@@ -23,7 +23,7 @@ const app = express();
 // Serving static files
 app.use(
   cors({
-    origin: 'https://tours-travel-frontendd.vercel.app/',
+    origin: 'https://tours-travel-frontendd.vercel.app',
     credentials: true
   })
 );
