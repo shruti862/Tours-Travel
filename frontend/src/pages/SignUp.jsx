@@ -19,7 +19,7 @@ function SignUp() {
       const response = await axios({
         method: "post",
 
-        url: "https://tours-travel-5ebw.vercel.app/api/v1/users/signup",
+        url: "https://tours-travel-liard.vercel.app/api/v1/users/signup",
         withCredentials: true,
         data: {
           name: name,
