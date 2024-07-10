@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Spinner from "../components/Spinner";
 import Footer from "../components/Footer";
 import styles from "./Homepage.module.css";
 
@@ -37,7 +36,7 @@ function Homepage() {
     <>
       <Navbar />
       {loading ? (
-        <Spinner />
+        <div className={styles.head}>Loading...</div>
       ) : (
         <main className={styles.main}>
           <div className={styles.card_container}>
